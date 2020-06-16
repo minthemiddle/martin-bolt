@@ -1,0 +1,3 @@
+<?php //%255BBolt%255CController%255CTwigAwareController%2523setThemePackage%255D%255B1%255D
+
+return [PHP_INT_MAX, []];

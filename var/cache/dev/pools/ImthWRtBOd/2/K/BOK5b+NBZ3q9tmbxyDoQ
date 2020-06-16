@@ -1,0 +1,30 @@
+<?php //subresource_operations_6603c372d7a87fc4ac867b17ac24d5d6
+
+return [PHP_INT_MAX, [
+    'api_contents_fields_get_subresource' => [
+        'property' => 'fields',
+        'collection' => true,
+        'resource_class' => 'Bolt\\Entity\\Field',
+        'shortNames' => [
+            'Field',
+            'Content',
+        ],
+        'identifiers' => [
+            [
+                'id',
+                'Bolt\\Entity\\Content',
+                true,
+            ],
+        ],
+        'operation_name' => 'fields_get_subresource',
+        'route_name' => 'api_contents_fields_get_subresource',
+        'path' => '/contents/{id}/fields.{_format}',
+        'defaults' => [],
+        'requirements' => [],
+        'options' => [],
+        'host' => '',
+        'schemes' => [],
+        'condition' => '',
+        'controller' => null,
+    ],
+]];

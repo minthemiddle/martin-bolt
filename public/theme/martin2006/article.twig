@@ -1,0 +1,20 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+<article class="rich-text">
+
+    <h1 class="pb-2 text-3xl font-medium leading-tight text-gray-800 hover:text-gray-600">{{ record|title }}</h1>
+
+    <p class="mb-8 text-gray-600">Martin Betz • Updated: May 01, 2020</p>
+
+    {{ record.body }}
+
+</article>
+
+    {# Uncomment this if you wish to dump the entire record to the client, for debugging purposes.
+    {{ dump(record) }}
+    #}
+
+    {% include 'partials/_recordfooter.twig' with { 'record': record, 'extended': true } %}
+
+{% endblock main %}

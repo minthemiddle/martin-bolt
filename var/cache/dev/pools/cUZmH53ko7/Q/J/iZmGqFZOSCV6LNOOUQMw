@@ -1,0 +1,39 @@
+<?php //%255BBolt%255CController%255CFrontend%255CHomepageController%2523homepage%255D%255B1%255D
+
+return [PHP_INT_MAX, static function () { return \Symfony\Component\VarExporter\Internal\Hydrator::hydrate(
+    $o = [
+        clone (($p = &\Symfony\Component\VarExporter\Internal\Registry::$prototypes)['Symfony\\Component\\Routing\\Annotation\\Route'] ?? \Symfony\Component\VarExporter\Internal\Registry::p('Symfony\\Component\\Routing\\Annotation\\Route')),
+        clone $p['Symfony\\Component\\Routing\\Annotation\\Route'],
+    ],
+    null,
+    [
+        'Symfony\\Component\\Routing\\Annotation\\Route' => [
+            'path' => [
+                '/',
+                '/{_locale}/',
+            ],
+            'name' => [
+                'homepage',
+                'homepage_locale',
+            ],
+            'methods' => [
+                [
+                    'GET|POST',
+                ],
+                [
+                    'GET|POST',
+                ],
+            ],
+            'requirements' => [
+                1 => [
+                    '_locale' => '%app_locales%',
+                ],
+            ],
+        ],
+    ],
+    [
+        $o[0],
+        $o[1],
+    ],
+    []
+); }];

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="{{ htmllang() }}">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>
+            {%- if record|default and record.title -%}
+                {{- record.title ~ ' | ' -}}
+            {%- endif -%}
+            {{- config.get('general/sitename') -}}
+            {%- if record|default == null and config.has('general/payoff') -%}
+                {{- ' | ' ~ config.get('general/payoff') -}}
+            {%- endif -%}
+        </title>
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+        <link href="https://pensive-agnesi-f6bc76.netlify.app/_next/static/css/styles.60ef2fea.chunk.css" rel="stylesheet">
+    </head>
+    <body class="mx-auto max-w-4xl mb-8 px-16 py-4 bg-gray-100">
+        {% block body %}
+
+            {{ include('partials/_header.twig') }}
+
+            <main class="px-4 bg-white">
+            {% block main %}
+            {% endblock main %}
+            </main>
+
+        {% endblock body %}
+
+        {{ include('partials/_footer.twig') }}
+
+    </body>
+</html>

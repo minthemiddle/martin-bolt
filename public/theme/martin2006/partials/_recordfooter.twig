@@ -1,0 +1,9 @@
+<p class="mt-8">
+    {% if user %}
+        <span class="inline-block bg-gray-200 px-2 py-1 text-sm"><a href="{{ record|edit_link }}"><strong>{{ __('general.phrase.edit') }}</strong></a></span> -
+    {% endif %}
+    {{ __('general.phrase.written-by-on', {
+        '%name%': record.author.displayName|default(__('Unknown')),
+        '%date%': record.publishedAt|localedatetime("%A %B %e, %Y")
+    }) }}
+</p>

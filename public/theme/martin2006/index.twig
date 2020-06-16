@@ -1,0 +1,20 @@
+{% extends 'partials/_master.twig' %}
+
+{% block main %}
+
+    {% if record|default %}
+
+        {{ record.content }}
+
+        {{ include('partials/_recordfooter.twig', { 'record': record }) }}
+
+    {% endif %}
+
+        <h2 class="mt-8 font-xl">Latest articles</h2>
+        {% setcontent articles = 'articles/latest/3' %}
+        {% for article in articles %}
+                <a href="{{ article|link }}" class="underline">{{ article|title }}</a>
+                <p>{{ article.teaser }}</p>
+        {% endfor %}
+
+{% endblock main %}
