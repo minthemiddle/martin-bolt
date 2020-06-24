@@ -23,4 +23,4 @@ categories:
     singular_slug: category
     behaves_like: categories
     multiple: true
-    options: [ tech, product, politics ]
+    options: [ tech, product, politics, people, productivity ]

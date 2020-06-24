@@ -11,7 +11,6 @@
     <parameter key="kernel.bundles" type="collection">
       <parameter key="ApiPlatformBundle">ApiPlatform\Core\Bridge\Symfony\Bundle\ApiPlatformBundle</parameter>
       <parameter key="DoctrineBundle">Doctrine\Bundle\DoctrineBundle\DoctrineBundle</parameter>
-      <parameter key="DoctrineCacheBundle">Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle</parameter>
       <parameter key="DoctrineFixturesBundle">Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle</parameter>
       <parameter key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</parameter>
       <parameter key="DoctrineBehaviorsBundle">Knp\DoctrineBehaviors\DoctrineBehaviorsBundle</parameter>
@@ -37,10 +36,6 @@
       <parameter key="DoctrineBundle" type="collection">
         <parameter key="path">/Users/martinbetz/Sites/martin-bolt/vendor/doctrine/doctrine-bundle</parameter>
         <parameter key="namespace">Doctrine\Bundle\DoctrineBundle</parameter>
-      </parameter>
-      <parameter key="DoctrineCacheBundle" type="collection">
-        <parameter key="path">/Users/martinbetz/Sites/martin-bolt/vendor/doctrine/doctrine-cache-bundle</parameter>
-        <parameter key="namespace">Doctrine\Bundle\DoctrineCacheBundle</parameter>
       </parameter>
       <parameter key="DoctrineFixturesBundle" type="collection">
         <parameter key="path">/Users/martinbetz/Sites/martin-bolt/vendor/doctrine/doctrine-fixtures-bundle</parameter>
@@ -464,48 +459,6 @@
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
     <parameter key="doctrine.orm.proxy_dir">/Users/martinbetz/Sites/martin-bolt/var/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
-    <parameter key="doctrine_cache.apc.class">Doctrine\Common\Cache\ApcCache</parameter>
-    <parameter key="doctrine_cache.apcu.class">Doctrine\Common\Cache\ApcuCache</parameter>
-    <parameter key="doctrine_cache.array.class">Doctrine\Common\Cache\ArrayCache</parameter>
-    <parameter key="doctrine_cache.chain.class">Doctrine\Common\Cache\ChainCache</parameter>
-    <parameter key="doctrine_cache.couchbase.class">Doctrine\Common\Cache\CouchbaseCache</parameter>
-    <parameter key="doctrine_cache.couchbase.connection.class">Couchbase</parameter>
-    <parameter key="doctrine_cache.couchbase.hostnames">localhost:8091</parameter>
-    <parameter key="doctrine_cache.file_system.class">Doctrine\Common\Cache\FilesystemCache</parameter>
-    <parameter key="doctrine_cache.php_file.class">Doctrine\Common\Cache\PhpFileCache</parameter>
-    <parameter key="doctrine_cache.memcache.class">Doctrine\Common\Cache\MemcacheCache</parameter>
-    <parameter key="doctrine_cache.memcache.connection.class">Memcache</parameter>
-    <parameter key="doctrine_cache.memcache.host">localhost</parameter>
-    <parameter key="doctrine_cache.memcache.port">11211</parameter>
-    <parameter key="doctrine_cache.memcached.class">Doctrine\Common\Cache\MemcachedCache</parameter>
-    <parameter key="doctrine_cache.memcached.connection.class">Memcached</parameter>
-    <parameter key="doctrine_cache.memcached.host">localhost</parameter>
-    <parameter key="doctrine_cache.memcached.port">11211</parameter>
-    <parameter key="doctrine_cache.mongodb.class">Doctrine\Common\Cache\MongoDBCache</parameter>
-    <parameter key="doctrine_cache.mongodb.collection.class">MongoCollection</parameter>
-    <parameter key="doctrine_cache.mongodb.connection.class">MongoClient</parameter>
-    <parameter key="doctrine_cache.mongodb.server">localhost:27017</parameter>
-    <parameter key="doctrine_cache.predis.client.class">Predis\Client</parameter>
-    <parameter key="doctrine_cache.predis.scheme">tcp</parameter>
-    <parameter key="doctrine_cache.predis.host">localhost</parameter>
-    <parameter key="doctrine_cache.predis.port">6379</parameter>
-    <parameter key="doctrine_cache.redis.class">Doctrine\Common\Cache\RedisCache</parameter>
-    <parameter key="doctrine_cache.redis.connection.class">Redis</parameter>
-    <parameter key="doctrine_cache.redis.host">localhost</parameter>
-    <parameter key="doctrine_cache.redis.port">6379</parameter>
-    <parameter key="doctrine_cache.riak.class">Doctrine\Common\Cache\RiakCache</parameter>
-    <parameter key="doctrine_cache.riak.bucket.class">Riak\Bucket</parameter>
-    <parameter key="doctrine_cache.riak.connection.class">Riak\Connection</parameter>
-    <parameter key="doctrine_cache.riak.bucket_property_list.class">Riak\BucketPropertyList</parameter>
-    <parameter key="doctrine_cache.riak.host">localhost</parameter>
-    <parameter key="doctrine_cache.riak.port">8087</parameter>
-    <parameter key="doctrine_cache.sqlite3.class">Doctrine\Common\Cache\SQLite3Cache</parameter>
-    <parameter key="doctrine_cache.sqlite3.connection.class">SQLite3</parameter>
-    <parameter key="doctrine_cache.void.class">Doctrine\Common\Cache\VoidCache</parameter>
-    <parameter key="doctrine_cache.wincache.class">Doctrine\Common\Cache\WinCacheCache</parameter>
-    <parameter key="doctrine_cache.xcache.class">Doctrine\Common\Cache\XcacheCache</parameter>
-    <parameter key="doctrine_cache.zenddata.class">Doctrine\Common\Cache\ZendDataCache</parameter>
-    <parameter key="doctrine_cache.security.acl.cache.class">Doctrine\Bundle\DoctrineCacheBundle\Acl\Model\AclCache</parameter>
     <parameter key="knp_menu.renderer.list.options" type="collection"/>
     <parameter key="knp_menu.twig.extension.class">Knp\Menu\Twig\MenuExtension</parameter>
     <parameter key="knp_menu.renderer.twig.class">Knp\Menu\Renderer\TwigRenderer</parameter>
@@ -581,7 +534,7 @@
     <parameter key="kernel.http_method_override">true</parameter>
     <parameter key="kernel.trusted_hosts" type="collection"/>
     <parameter key="kernel.default_locale">en</parameter>
-    <parameter key="kernel.error_controller">error_controller</parameter>
+    <parameter key="kernel.error_controller">Bolt\Controller\ErrorController::showAction</parameter>
     <parameter key="templating.helper.code.file_link_format">phpstorm://open?file=%f&amp;line=%l</parameter>
     <parameter key="debug.file_link_format">phpstorm://open?file=%f&amp;line=%l</parameter>
     <parameter key="cache.prefix.seed">bolt</parameter>
@@ -598,7 +551,6 @@
     <parameter key="form.type_extension.csrf.field_name">_token</parameter>
     <parameter key="asset.request_context.base_path"></parameter>
     <parameter key="asset.request_context.secure">false</parameter>
-    <parameter key="validator.mapping.cache.prefix"></parameter>
     <parameter key="validator.mapping.cache.file">/Users/martinbetz/Sites/martin-bolt/var/cache/dev/validation.php</parameter>
     <parameter key="validator.translation_domain">validators</parameter>
     <parameter key="translator.logging">false</parameter>
@@ -616,7 +568,6 @@
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
     <parameter key="serializer.mapping.cache.file">/Users/martinbetz/Sites/martin-bolt/var/cache/dev/serialization.php</parameter>
-    <parameter key="serializer.mapping.cache.prefix"></parameter>
     <parameter key="monolog.use_microseconds">true</parameter>
     <parameter key="monolog.swift_mailer.handlers" type="collection"/>
     <parameter key="monolog.handlers_to_channels" type="collection">
@@ -658,7 +609,7 @@
     <parameter key="security.authentication.session_strategy.strategy">migrate</parameter>
     <parameter key="security.access.always_authenticate_before_granting">false</parameter>
     <parameter key="security.authentication.hide_user_not_found">true</parameter>
-    <parameter key="twig.exception_listener.controller">Bolt\Controller\ExceptionController::showAction</parameter>
+    <parameter key="twig.exception_listener.controller">null</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
       <parameter>@bolt/form/layout.html.twig</parameter>
@@ -766,10 +717,6 @@
     <parameter key="console.command.ids" type="collection">
       <parameter>console.command.public_alias.api_platform.json_schema.json_schema_generate_command</parameter>
       <parameter>console.command.public_alias.api_platform.swagger.command.swagger_command</parameter>
-      <parameter>console.command.public_alias.doctrine_cache.contains_command</parameter>
-      <parameter>console.command.public_alias.doctrine_cache.delete_command</parameter>
-      <parameter>console.command.public_alias.doctrine_cache.flush_command</parameter>
-      <parameter>console.command.public_alias.doctrine_cache.stats_command</parameter>
     </parameter>
   </parameters>
   <services>
@@ -794,7 +741,6 @@
       <argument type="service" id="Bolt\Configuration\Config"/>
       <argument type="service" id="router.default"/>
       <argument type="service" id="request_stack"/>
-      <argument type="service" id="router.default"/>
       <argument>en</argument>
     </service>
     <service id="Bolt\Collection\DeepCollection" class="Bolt\Collection\DeepCollection" public="false" autowire="true" autoconfigure="true"/>
@@ -950,6 +896,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\AuthenticationController"/>
@@ -989,6 +937,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\ContentEditController"/>
@@ -1002,6 +952,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\ContentLocalizationController"/>
@@ -1015,6 +967,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\DashboardController"/>
@@ -1028,6 +982,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\DatabaseIntegrityController"/>
@@ -1052,6 +1008,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\FileEditController"/>
@@ -1068,6 +1026,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\FilemanagerController"/>
@@ -1081,6 +1041,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\FixturesController"/>
@@ -1095,6 +1057,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\GeneralController"/>
@@ -1108,6 +1072,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\ListingController"/>
@@ -1121,6 +1087,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\LogViewerController"/>
@@ -1137,6 +1105,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\MediaController"/>
@@ -1155,6 +1125,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\MediaEditController"/>
@@ -1168,6 +1140,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\MenuPageController"/>
@@ -1181,6 +1155,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\OmnisearchController"/>
@@ -1197,6 +1173,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\ProfileController"/>
@@ -1211,6 +1189,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\UserController"/>
@@ -1228,17 +1208,20 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Backend\UserEditController"/>
       </call>
     </service>
-    <service id="Bolt\Controller\ExceptionController" class="Bolt\Controller\ExceptionController" public="true" autowire="true" autoconfigure="true">
-      <argument type="service" id="twig"/>
-      <argument>true</argument>
+    <service id="Bolt\Controller\ErrorController" class="Bolt\Controller\ErrorController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <argument type="service" id="http_kernel"/>
       <argument type="service" id="Bolt\Configuration\Config"/>
       <argument type="service" id="Bolt\Controller\Frontend\DetailController"/>
       <argument type="service" id="Bolt\Controller\Frontend\TemplateController"/>
+      <argument type="service" id="error_handler.error_renderer.html"/>
     </service>
     <service id="Bolt\Controller\FileController" class="Bolt\Controller\FileController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
@@ -1249,12 +1232,13 @@
       <tag name="container.service_subscriber"/>
       <argument type="service" id="Bolt\TemplateChooser"/>
       <argument type="service" id="Bolt\Repository\ContentRepository"/>
-      <argument type="service" id="request_stack"/>
       <call method="setAutowire">
         <argument type="service" id="Bolt\Configuration\Config"/>
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Frontend\DetailController"/>
@@ -1264,11 +1248,14 @@
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="Bolt\TemplateChooser"/>
+      <argument type="service" id="Bolt\Controller\Frontend\DetailController"/>
       <call method="setAutowire">
         <argument type="service" id="Bolt\Configuration\Config"/>
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Frontend\HomepageController"/>
@@ -1284,6 +1271,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Frontend\ListingController"/>
@@ -1293,12 +1282,13 @@
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
       <argument type="service" id="Bolt\TemplateChooser"/>
-      <argument type="service" id="Bolt\Utils\Sanitiser"/>
       <call method="setAutowire">
         <argument type="service" id="Bolt\Configuration\Config"/>
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Frontend\SearchController"/>
@@ -1313,6 +1303,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Frontend\TaxonomyController"/>
@@ -1326,6 +1318,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\Frontend\TemplateController"/>
@@ -1343,6 +1337,8 @@
         <argument type="service" id="twig"/>
         <argument type="service" id="assets.packages"/>
         <argument type="service" id="Bolt\Canonical"/>
+        <argument type="service" id="Bolt\Utils\Sanitiser"/>
+        <argument type="service" id="request_stack"/>
       </call>
       <call method="setContainer">
         <argument type="service" id=".service_locator.bgaRbUU.Bolt\Controller\TwigAwareController"/>
@@ -1409,10 +1405,6 @@
     <service id="Bolt\Event\Listener\RelationFillListener" class="Bolt\Event\Listener\RelationFillListener" public="false" autowire="true" autoconfigure="true">
       <argument type="service" id="Bolt\Configuration\Config"/>
     </service>
-    <service id="Bolt\Event\Subscriber\CheckRequirementsSubscriber" class="Bolt\Event\Subscriber\CheckRequirementsSubscriber" public="false" autowire="true" autoconfigure="true">
-      <tag name="kernel.event_subscriber"/>
-      <argument type="service" id="doctrine.orm.default_entity_manager"/>
-    </service>
     <service id="Bolt\Event\Subscriber\ContentSaveSubscriber" class="Bolt\Event\Subscriber\ContentSaveSubscriber" public="false" autowire="true" autoconfigure="true">
       <tag name="kernel.event_subscriber"/>
       <argument type="service" id="cache.app.taggable"/>
@@ -1476,6 +1468,8 @@
           <argument>BobdenOtter\WeatherWidget\Extension</argument>
           <argument>Bolt\NewsWidget\Extension</argument>
           <argument>BobdenOtter\ConfigurationNotices\Extension</argument>
+          <argument>Bolt\BoltForms\Extension</argument>
+          <argument>Bobdenotter\RssExtension\Extension</argument>
         </argument>
       </call>
     </service>
@@ -1748,6 +1742,9 @@
       <argument type="service" id="cache.app"/>
       <argument type="service" id="debug.stopwatch"/>
     </service>
+    <service id="Squirrel\TwigPhpSyntax\PhpSyntaxExtension" class="Squirrel\TwigPhpSyntax\PhpSyntaxExtension" public="false" autowire="true" autoconfigure="true">
+      <tag name="twig.extension"/>
+    </service>
     <service id="Doctrine\ORM\Query\Expr" class="Doctrine\ORM\Query\Expr" public="false" autowire="true" autoconfigure="true"/>
     <service id="monolog.processor.request" class="Bolt\Log\RequestProcessor" public="false" autowire="true" autoconfigure="true">
       <tag name="monolog.processor" method="processRecord" handler="db"/>
@@ -1770,6 +1767,60 @@
     <service id="BobdenOtter\ConfigurationNotices\ConfigurationWidget" class="BobdenOtter\ConfigurationNotices\ConfigurationWidget" autowire="true" autoconfigure="true"/>
     <service id="BobdenOtter\ConfigurationNotices\Extension" class="BobdenOtter\ConfigurationNotices\Extension" autowire="true" autoconfigure="true">
       <tag name="bolt.extension"/>
+    </service>
+    <service id="Bolt\BoltForms\Event\PostSubmitEvent" class="Bolt\BoltForms\Event\PostSubmitEvent" autowire="true" autoconfigure="true"/>
+    <service id="Bolt\BoltForms\EventSubscriber\HoneypotSubscriber" class="Bolt\BoltForms\EventSubscriber\HoneypotSubscriber" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_subscriber"/>
+    </service>
+    <service id="Bolt\BoltForms\EventSubscriber\Logger" class="Bolt\BoltForms\EventSubscriber\Logger" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_subscriber"/>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.db"/>
+      </call>
+    </service>
+    <service id="Bolt\BoltForms\EventSubscriber\Mailer" class="Bolt\BoltForms\EventSubscriber\Mailer" autowire="true" autoconfigure="true">
+      <tag name="kernel.event_subscriber"/>
+      <argument type="service" id="mailer.mailer"/>
+      <call method="setLogger">
+        <argument type="service" id="monolog.logger.db"/>
+      </call>
+    </service>
+    <service id="Bolt\BoltForms\Extension" class="Bolt\BoltForms\Extension" autowire="true" autoconfigure="true">
+      <tag name="bolt.extension"/>
+    </service>
+    <service id="Bolt\BoltForms\Factory\FieldConstraints" class="Bolt\BoltForms\Factory\FieldConstraints" autowire="true" autoconfigure="true"/>
+    <service id="Bolt\BoltForms\Factory\FieldOptions" class="Bolt\BoltForms\Factory\FieldOptions" autowire="true" autoconfigure="true"/>
+    <service id="Bolt\BoltForms\Factory\FieldType" class="Bolt\BoltForms\Factory\FieldType" autowire="true" autoconfigure="true"/>
+    <service id="Bolt\BoltForms\FormBuilder" class="Bolt\BoltForms\FormBuilder" autowire="true" autoconfigure="true">
+      <argument type="service" id="form.factory"/>
+    </service>
+    <service id="Bolt\BoltForms\FormRuntime" class="Bolt\BoltForms\FormRuntime" autowire="true" autoconfigure="true">
+      <tag name="twig.runtime"/>
+      <argument type="service" id="Bolt\Extension\ExtensionRegistry"/>
+      <argument type="service" id="Bolt\Twig\Notifications"/>
+      <argument type="service" id="twig"/>
+      <argument type="service" id="Bolt\BoltForms\FormBuilder"/>
+      <argument type="service" id="request_stack"/>
+      <argument type="service" id="debug.event_dispatcher"/>
+    </service>
+    <service id="Bolt\BoltForms\Honeypot" class="Bolt\BoltForms\Honeypot" autowire="true" autoconfigure="true"/>
+    <service id="Bolt\BoltForms\TwigExtension" class="Bolt\BoltForms\TwigExtension" autowire="true" autoconfigure="true">
+      <tag name="twig.extension"/>
+    </service>
+    <service id="Bobdenotter\RssExtension\Controller" class="Bobdenotter\RssExtension\Controller" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.vdmMuyE.Bobdenotter\RssExtension\Controller"/>
+      </call>
+    </service>
+    <service id="Bobdenotter\RssExtension\Extension" class="Bobdenotter\RssExtension\Extension" autowire="true" autoconfigure="true">
+      <tag name="bolt.extension"/>
+    </service>
+    <service id="Bobdenotter\RssExtension\ReferenceWidget" class="Bobdenotter\RssExtension\ReferenceWidget" autowire="true" autoconfigure="true"/>
+    <service id="Bobdenotter\RssExtension\RegisterControllers" class="Bobdenotter\RssExtension\RegisterControllers" autowire="true" autoconfigure="true"/>
+    <service id="Bobdenotter\RssExtension\Twig" class="Bobdenotter\RssExtension\Twig" autowire="true" autoconfigure="true">
+      <tag name="twig.extension"/>
     </service>
     <service id="api_platform.negotiator" class="Negotiation\Negotiator" public="false"/>
     <service id="api_platform.resource_class_resolver" class="ApiPlatform\Core\Api\ResourceClassResolver" public="false">
@@ -1919,7 +1970,7 @@
       <argument>api_platform.action.exception</argument>
       <argument type="service" id="monolog.logger.request" on-invalid="null"/>
       <argument>false</argument>
-      <argument>null</argument>
+      <argument type="service" id="exception_listener" on-invalid="null"/>
     </service>
     <service id="api_platform.action.placeholder" class="ApiPlatform\Core\Action\PlaceholderAction" public="true"/>
     <service id="api_platform.action.not_found" class="ApiPlatform\Core\Action\NotFoundAction" public="true"/>
@@ -2008,9 +2059,9 @@
     </service>
     <service id="api_platform.filter_collection_factory" class="ApiPlatform\Core\Api\FilterCollectionFactory" public="false">
       <argument type="collection">
-        <argument>annotated_bolt_entity_relation_api_platform_core_bridge_doctrine_orm_filter_search_filter</argument>
         <argument>annotated_bolt_entity_content_api_platform_core_bridge_doctrine_orm_filter_search_filter</argument>
         <argument>annotated_bolt_entity_field_api_platform_core_bridge_doctrine_orm_filter_search_filter</argument>
+        <argument>annotated_bolt_entity_relation_api_platform_core_bridge_doctrine_orm_filter_search_filter</argument>
       </argument>
     </service>
     <service id="api_platform.filters" class="ApiPlatform\Core\Api\FilterCollection" public="false">
@@ -3183,36 +3234,6 @@
       <argument type="service" id="doctrine.orm.default_entity_manager"/>
       <argument>null</argument>
     </service>
-    <service id="doctrine_cache.abstract.apc" class="Doctrine\Common\Cache\ApcCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.apcu" class="Doctrine\Common\Cache\ApcuCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.array" class="Doctrine\Common\Cache\ArrayCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.chain" class="Doctrine\Common\Cache\ChainCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.couchbase" class="Doctrine\Common\Cache\CouchbaseCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.file_system" class="Doctrine\Common\Cache\FilesystemCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.php_file" class="Doctrine\Common\Cache\PhpFileCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.memcache" class="Doctrine\Common\Cache\MemcacheCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.memcached" class="Doctrine\Common\Cache\MemcachedCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.mongodb" class="Doctrine\Common\Cache\MongoDBCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.redis" class="Doctrine\Common\Cache\RedisCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.predis" class="Doctrine\Common\Cache\PredisCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.riak" class="Doctrine\Common\Cache\RiakCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.sqlite3" class="Doctrine\Common\Cache\SQLite3Cache" abstract="true"/>
-    <service id="doctrine_cache.abstract.void" class="Doctrine\Common\Cache\VoidCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.wincache" class="Doctrine\Common\Cache\WinCacheCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.xcache" class="Doctrine\Common\Cache\XcacheCache" abstract="true"/>
-    <service id="doctrine_cache.abstract.zenddata" class="Doctrine\Common\Cache\ZendDataCache" abstract="true"/>
-    <service id="doctrine_cache.contains_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\ContainsCommand">
-      <tag name="console.command"/>
-    </service>
-    <service id="doctrine_cache.delete_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\DeleteCommand">
-      <tag name="console.command"/>
-    </service>
-    <service id="doctrine_cache.flush_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\FlushCommand">
-      <tag name="console.command"/>
-    </service>
-    <service id="doctrine_cache.stats_command" class="Doctrine\Bundle\DoctrineCacheBundle\Command\StatsCommand">
-      <tag name="console.command"/>
-    </service>
     <service id="doctrine.fixtures_load_command" class="Doctrine\Bundle\FixturesBundle\Command\LoadDataFixturesDoctrineCommand">
       <tag name="console.command" command="doctrine:fixtures:load"/>
       <argument type="service" id="doctrine.fixtures.loader"/>
@@ -3600,8 +3621,16 @@
     </service>
     <service id="error_controller" class="Symfony\Component\HttpKernel\Controller\ErrorController" public="true">
       <argument type="service" id="http_kernel"/>
-      <argument>error_controller</argument>
+      <argument>Bolt\Controller\ErrorController::showAction</argument>
       <argument type="service" id="error_handler.error_renderer.serializer"/>
+    </service>
+    <service id="exception_listener" class="Symfony\Component\HttpKernel\EventListener\ErrorListener" public="false">
+      <tag name="kernel.event_subscriber"/>
+      <tag name="monolog.logger" channel="request"/>
+      <tag name="container.hot_path"/>
+      <argument>Bolt\Controller\ErrorController::showAction</argument>
+      <argument type="service" id="monolog.logger.request" on-invalid="null"/>
+      <argument>true</argument>
     </service>
     <service id="parameter_bag" class="Symfony\Component\DependencyInjection\ParameterBag\ContainerBag" public="false">
       <argument type="service" id="service_container"/>
@@ -5007,8 +5036,6 @@
           <argument>/Users/martinbetz/Sites/martin-bolt/src/Resources/ApiPlatformBundle/translations</argument>
           <argument>/Users/martinbetz/Sites/martin-bolt/vendor/doctrine/doctrine-bundle/translations</argument>
           <argument>/Users/martinbetz/Sites/martin-bolt/src/Resources/DoctrineBundle/translations</argument>
-          <argument>/Users/martinbetz/Sites/martin-bolt/vendor/doctrine/doctrine-cache-bundle/translations</argument>
-          <argument>/Users/martinbetz/Sites/martin-bolt/src/Resources/DoctrineCacheBundle/translations</argument>
           <argument>/Users/martinbetz/Sites/martin-bolt/vendor/doctrine/doctrine-fixtures-bundle/translations</argument>
           <argument>/Users/martinbetz/Sites/martin-bolt/src/Resources/DoctrineFixturesBundle/translations</argument>
           <argument>/Users/martinbetz/Sites/martin-bolt/vendor/knplabs/knp-menu-bundle/src/translations</argument>
@@ -5055,8 +5082,6 @@
             <argument>src/Resources/ApiPlatformBundle/translations</argument>
             <argument>vendor/doctrine/doctrine-bundle/translations</argument>
             <argument>src/Resources/DoctrineBundle/translations</argument>
-            <argument>vendor/doctrine/doctrine-cache-bundle/translations</argument>
-            <argument>src/Resources/DoctrineCacheBundle/translations</argument>
             <argument>vendor/doctrine/doctrine-fixtures-bundle/translations</argument>
             <argument>src/Resources/DoctrineFixturesBundle/translations</argument>
             <argument>vendor/knplabs/knp-menu-bundle/src/translations</argument>
@@ -5753,22 +5778,6 @@
         <argument>512</argument>
       </call>
       <call method="addListener">
-        <argument>console.error</argument>
-        <argument type="collection">
-          <argument type="service" id="Bolt\Event\Subscriber\CheckRequirementsSubscriber"/>
-          <argument>handleConsoleError</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>kernel.exception</argument>
-        <argument type="collection">
-          <argument type="service" id="Bolt\Event\Subscriber\CheckRequirementsSubscriber"/>
-          <argument>handleKernelException</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
         <argument>bolt.post_save</argument>
         <argument type="collection">
           <argument type="service" id="Bolt\Event\Subscriber\ContentSaveSubscriber"/>
@@ -5847,6 +5856,30 @@
           <argument>onKernelRequest</argument>
         </argument>
         <argument>31</argument>
+      </call>
+      <call method="addListener">
+        <argument>boltforms.post_submit</argument>
+        <argument type="collection">
+          <argument type="service" id="Bolt\BoltForms\EventSubscriber\HoneypotSubscriber"/>
+          <argument>handleEvent</argument>
+        </argument>
+        <argument>20</argument>
+      </call>
+      <call method="addListener">
+        <argument>boltforms.post_submit</argument>
+        <argument type="collection">
+          <argument type="service" id="Bolt\BoltForms\EventSubscriber\Logger"/>
+          <argument>handleEvent</argument>
+        </argument>
+        <argument>10</argument>
+      </call>
+      <call method="addListener">
+        <argument>boltforms.post_submit</argument>
+        <argument type="collection">
+          <argument type="service" id="Bolt\BoltForms\EventSubscriber\Mailer"/>
+          <argument>handleEvent</argument>
+        </argument>
+        <argument>0</argument>
       </call>
       <call method="addListener">
         <argument>kernel.controller</argument>
@@ -5983,6 +6016,30 @@
           <argument>onResponse</argument>
         </argument>
         <argument>-255</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.controller_arguments</argument>
+        <argument type="collection">
+          <argument type="service" id="exception_listener"/>
+          <argument>onControllerArguments</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service" id="exception_listener"/>
+          <argument>logKernelException</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListener">
+        <argument>kernel.exception</argument>
+        <argument type="collection">
+          <argument type="service" id="exception_listener"/>
+          <argument>onKernelException</argument>
+        </argument>
+        <argument>-128</argument>
       </call>
       <call method="addListener">
         <argument>kernel.request</argument>
@@ -6239,22 +6296,6 @@
           <argument>onKernelFinishRequest</argument>
         </argument>
         <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>kernel.exception</argument>
-        <argument type="collection">
-          <argument type="service" id="twig.exception_listener"/>
-          <argument>logKernelException</argument>
-        </argument>
-        <argument>0</argument>
-      </call>
-      <call method="addListener">
-        <argument>kernel.exception</argument>
-        <argument type="collection">
-          <argument type="service" id="twig.exception_listener"/>
-          <argument>onKernelException</argument>
-        </argument>
-        <argument>-128</argument>
       </call>
       <call method="addListener">
         <argument>Symfony\Component\Mailer\Event\MessageEvent</argument>
@@ -6583,7 +6624,6 @@
     </service>
     <service id="serializer.mapping.class_metadata_factory" class="Symfony\Component\Serializer\Mapping\Factory\ClassMetadataFactory" public="false">
       <argument type="service" id="serializer.mapping.chain_loader"/>
-      <argument>null</argument>
     </service>
     <service id="serializer.mapping.cache_warmer" class="Symfony\Bundle\FrameworkBundle\CacheWarmer\SerializerCacheWarmer" public="false">
       <tag name="kernel.cache_warmer"/>
@@ -7700,7 +7740,16 @@
         <argument type="service" id="Bolt\Twig\WidgetExtension"/>
       </call>
       <call method="addExtension">
+        <argument type="service" id="Squirrel\TwigPhpSyntax\PhpSyntaxExtension"/>
+      </call>
+      <call method="addExtension">
         <argument type="service" id="Twig\Extension\StringLoaderExtension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="Bolt\BoltForms\TwigExtension"/>
+      </call>
+      <call method="addExtension">
+        <argument type="service" id="Bobdenotter\RssExtension\Twig"/>
       </call>
       <call method="addExtension">
         <argument type="service" id="doctrine.twig.doctrine_extension"/>
@@ -7939,14 +7988,6 @@
       <tag name="translation.extractor" alias="twig"/>
       <argument type="service" id="twig"/>
     </service>
-    <service id="twig.exception_listener" class="Symfony\Component\HttpKernel\EventListener\ExceptionListener" public="false">
-      <tag name="kernel.event_subscriber"/>
-      <tag name="monolog.logger" channel="request"/>
-      <argument>Bolt\Controller\ExceptionController::showAction</argument>
-      <argument type="service" id="monolog.logger.request" on-invalid="null"/>
-      <argument>true</argument>
-      <deprecated>The "%service_id%" service is deprecated since Symfony 4.4.</deprecated>
-    </service>
     <service id="twig.controller.exception" class="Symfony\Bundle\TwigBundle\Controller\ExceptionController" public="true">
       <argument type="service" id="twig"/>
       <argument>true</argument>
@@ -7954,7 +7995,7 @@
     </service>
     <service id="twig.controller.preview_error" class="Symfony\Bundle\TwigBundle\Controller\PreviewErrorController" public="true">
       <argument type="service" id="http_kernel"/>
-      <argument>Bolt\Controller\ExceptionController::showAction</argument>
+      <argument>null</argument>
       <deprecated>The "%service_id%" service is deprecated since Symfony 4.4.</deprecated>
     </service>
     <service id="twig.configurator.environment" class="Symfony\Bundle\TwigBundle\DependencyInjection\Configurator\EnvironmentConfigurator" public="false">
@@ -7966,7 +8007,7 @@
       <argument>,</argument>
     </service>
     <service id="twig.runtime_loader" class="Twig\RuntimeLoader\ContainerRuntimeLoader" public="false">
-      <argument type="service" id=".service_locator.glhu4sL"/>
+      <argument type="service" id=".service_locator.DJ2HLGf"/>
     </service>
     <service id="twig.error_renderer.html" class="Symfony\Bridge\Twig\ErrorRenderer\TwigErrorRenderer" public="false">
       <argument type="service" id="twig"/>
@@ -8076,7 +8117,7 @@
       <tag name="console.command" command="server:run"/>
       <argument>/Users/martinbetz/Sites/martin-bolt/public</argument>
       <argument>dev</argument>
-      <argument>/Users/martinbetz/Sites/martin-bolt/var/cache</argument>
+      <argument>/Users/martinbetz/Sites/martin-bolt</argument>
       <call method="setName">
         <argument>server:run</argument>
       </call>
@@ -8085,21 +8126,21 @@
       <tag name="console.command" command="server:start"/>
       <argument>/Users/martinbetz/Sites/martin-bolt/public</argument>
       <argument>dev</argument>
-      <argument>/Users/martinbetz/Sites/martin-bolt/var/cache</argument>
+      <argument>/Users/martinbetz/Sites/martin-bolt</argument>
       <call method="setName">
         <argument>server:start</argument>
       </call>
     </service>
     <service id="web_server.command.server_stop" class="Symfony\Bundle\WebServerBundle\Command\ServerStopCommand" public="false">
       <tag name="console.command" command="server:stop"/>
-      <argument>/Users/martinbetz/Sites/martin-bolt/var/cache</argument>
+      <argument>/Users/martinbetz/Sites/martin-bolt</argument>
       <call method="setName">
         <argument>server:stop</argument>
       </call>
     </service>
     <service id="web_server.command.server_status" class="Symfony\Bundle\WebServerBundle\Command\ServerStatusCommand" public="false">
       <tag name="console.command" command="server:status"/>
-      <argument>/Users/martinbetz/Sites/martin-bolt/var/cache</argument>
+      <argument>/Users/martinbetz/Sites/martin-bolt</argument>
       <call method="setName">
         <argument>server:status</argument>
       </call>
@@ -8590,25 +8631,6 @@
         <argument type="service" id="pagerfanta.view.twitter_bootstrap4"/>
       </call>
     </service>
-    <service id="annotated_bolt_entity_relation_api_platform_core_bridge_doctrine_orm_filter_search_filter" class="ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter" public="false" autowire="true">
-      <tag name="api_platform.filter"/>
-      <argument type="service" id="doctrine"/>
-      <argument>null</argument>
-      <argument type="service" id="api_platform.iri_converter"/>
-      <argument type="service" id="property_accessor"/>
-      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
-      <argument type="collection">
-        <argument key="id">partial</argument>
-        <argument key="name">partial</argument>
-        <argument key="fromContent">partial</argument>
-        <argument key="toContent">partial</argument>
-        <argument key="position">partial</argument>
-        <argument key="group">partial</argument>
-        <argument key="definition">partial</argument>
-      </argument>
-      <argument type="service" id="api_platform.identifiers_extractor.cached" on-invalid="ignore"/>
-      <argument type="service" id="serializer.name_converter.metadata_aware" on-invalid="ignore"/>
-    </service>
     <service id="annotated_bolt_entity_content_api_platform_core_bridge_doctrine_orm_filter_search_filter" class="ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter" public="false" autowire="true">
       <tag name="api_platform.filter"/>
       <argument type="service" id="doctrine"/>
@@ -8628,6 +8650,25 @@
       <argument type="service" id="property_accessor"/>
       <argument type="service" id="monolog.logger" on-invalid="ignore"/>
       <argument>null</argument>
+      <argument type="service" id="api_platform.identifiers_extractor.cached" on-invalid="ignore"/>
+      <argument type="service" id="serializer.name_converter.metadata_aware" on-invalid="ignore"/>
+    </service>
+    <service id="annotated_bolt_entity_relation_api_platform_core_bridge_doctrine_orm_filter_search_filter" class="ApiPlatform\Core\Bridge\Doctrine\Orm\Filter\SearchFilter" public="false" autowire="true">
+      <tag name="api_platform.filter"/>
+      <argument type="service" id="doctrine"/>
+      <argument>null</argument>
+      <argument type="service" id="api_platform.iri_converter"/>
+      <argument type="service" id="property_accessor"/>
+      <argument type="service" id="monolog.logger" on-invalid="ignore"/>
+      <argument type="collection">
+        <argument key="id">partial</argument>
+        <argument key="name">partial</argument>
+        <argument key="fromContent">partial</argument>
+        <argument key="toContent">partial</argument>
+        <argument key="position">partial</argument>
+        <argument key="group">partial</argument>
+        <argument key="definition">partial</argument>
+      </argument>
       <argument type="service" id="api_platform.identifiers_extractor.cached" on-invalid="ignore"/>
       <argument type="service" id="serializer.name_converter.metadata_aware" on-invalid="ignore"/>
     </service>
@@ -8754,8 +8795,6 @@
     <service id=".abstract.instanceof.Bolt\DataFixtures\TaxonomyFixtures" class="Bolt\DataFixtures\TaxonomyFixtures" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\FixturesBundle\ORMFixtureInterface.0.Bolt\DataFixtures\UserFixtures" class="Bolt\DataFixtures\UserFixtures" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.Bolt\DataFixtures\UserFixtures" class="Bolt\DataFixtures\UserFixtures" public="false" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.Bolt\Event\Subscriber\CheckRequirementsSubscriber" class="Bolt\Event\Subscriber\CheckRequirementsSubscriber" public="false" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.Bolt\Event\Subscriber\CheckRequirementsSubscriber" class="Bolt\Event\Subscriber\CheckRequirementsSubscriber" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.Bolt\Event\Subscriber\ContentSaveSubscriber" class="Bolt\Event\Subscriber\ContentSaveSubscriber" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.Bolt\Event\Subscriber\ContentSaveSubscriber" class="Bolt\Event\Subscriber\ContentSaveSubscriber" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.Bolt\Event\Subscriber\ExtensionSubscriber" class="Bolt\Event\Subscriber\ExtensionSubscriber" public="false" autowire="true" abstract="true"/>
@@ -8829,6 +8868,8 @@
     <service id=".abstract.instanceof.Bolt\Twig\UserExtension" class="Bolt\Twig\UserExtension" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Twig\Extension\ExtensionInterface.0.Bolt\Twig\WidgetExtension" class="Bolt\Twig\WidgetExtension" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.Bolt\Twig\WidgetExtension" class="Bolt\Twig\WidgetExtension" public="false" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Twig\Extension\ExtensionInterface.0.Squirrel\TwigPhpSyntax\PhpSyntaxExtension" class="Squirrel\TwigPhpSyntax\PhpSyntaxExtension" public="false" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Squirrel\TwigPhpSyntax\PhpSyntaxExtension" class="Squirrel\TwigPhpSyntax\PhpSyntaxExtension" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Twig\Extension\ExtensionInterface.0.Twig\Extension\StringLoaderExtension" class="Twig\Extension\StringLoaderExtension" public="false" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.Twig\Extension\StringLoaderExtension" class="Twig\Extension\StringLoaderExtension" public="false" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Bolt\Extension\ExtensionInterface.0.BobdenOtter\WeatherWidget\Extension" class="BobdenOtter\WeatherWidget\Extension" autowire="true" abstract="true"/>
@@ -8837,6 +8878,25 @@
     <service id=".abstract.instanceof.Bolt\NewsWidget\Extension" class="Bolt\NewsWidget\Extension" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Bolt\Extension\ExtensionInterface.0.BobdenOtter\ConfigurationNotices\Extension" class="BobdenOtter\ConfigurationNotices\Extension" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.BobdenOtter\ConfigurationNotices\Extension" class="BobdenOtter\ConfigurationNotices\Extension" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.Bolt\BoltForms\EventSubscriber\HoneypotSubscriber" class="Bolt\BoltForms\EventSubscriber\HoneypotSubscriber" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bolt\BoltForms\EventSubscriber\HoneypotSubscriber" class="Bolt\BoltForms\EventSubscriber\HoneypotSubscriber" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.Bolt\BoltForms\EventSubscriber\Logger" class="Bolt\BoltForms\EventSubscriber\Logger" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bolt\BoltForms\EventSubscriber\Logger" class="Bolt\BoltForms\EventSubscriber\Logger" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Component\EventDispatcher\EventSubscriberInterface.0.Bolt\BoltForms\EventSubscriber\Mailer" class="Bolt\BoltForms\EventSubscriber\Mailer" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bolt\BoltForms\EventSubscriber\Mailer" class="Bolt\BoltForms\EventSubscriber\Mailer" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Bolt\Extension\ExtensionInterface.0.Bolt\BoltForms\Extension" class="Bolt\BoltForms\Extension" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bolt\BoltForms\Extension" class="Bolt\BoltForms\Extension" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Twig\Extension\RuntimeExtensionInterface.0.Bolt\BoltForms\FormRuntime" class="Bolt\BoltForms\FormRuntime" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bolt\BoltForms\FormRuntime" class="Bolt\BoltForms\FormRuntime" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Twig\Extension\ExtensionInterface.0.Bolt\BoltForms\TwigExtension" class="Bolt\BoltForms\TwigExtension" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bolt\BoltForms\TwigExtension" class="Bolt\BoltForms\TwigExtension" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.Bobdenotter\RssExtension\Controller" class="Bobdenotter\RssExtension\Controller" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.Bobdenotter\RssExtension\Controller" class="Bobdenotter\RssExtension\Controller" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bobdenotter\RssExtension\Controller" class="Bobdenotter\RssExtension\Controller" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Bolt\Extension\ExtensionInterface.0.Bobdenotter\RssExtension\Extension" class="Bobdenotter\RssExtension\Extension" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bobdenotter\RssExtension\Extension" class="Bobdenotter\RssExtension\Extension" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Twig\Extension\ExtensionInterface.0.Bobdenotter\RssExtension\Twig" class="Bobdenotter\RssExtension\Twig" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.Bobdenotter\RssExtension\Twig" class="Bobdenotter\RssExtension\Twig" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Common\EventSubscriber.0.Knp\DoctrineBehaviors\EventSubscriber\BlameableSubscriber" class="Knp\DoctrineBehaviors\EventSubscriber\BlameableSubscriber" public="true" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.Knp\DoctrineBehaviors\EventSubscriber\BlameableSubscriber" class="Knp\DoctrineBehaviors\EventSubscriber\BlameableSubscriber" public="true" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Common\EventSubscriber.0.Knp\DoctrineBehaviors\EventSubscriber\LoggableSubscriber" class="Knp\DoctrineBehaviors\EventSubscriber\LoggableSubscriber" public="true" autowire="true" abstract="true"/>
@@ -9125,12 +9185,14 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.M64N0Dl" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.Sg7zEzf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="canonical" type="service" id="Bolt\Canonical"/>
         <argument key="config" type="service" id="Bolt\Configuration\Config"/>
         <argument key="packages" type="service" id="assets.packages"/>
+        <argument key="requestStack" type="service" id="request_stack"/>
+        <argument key="sanitiser" type="service" id="Bolt\Utils\Sanitiser"/>
         <argument key="twig" type="service" id="twig"/>
       </argument>
     </service>
@@ -9150,10 +9212,10 @@
       <tag name="container.service_locator"/>
       <argument type="collection"/>
     </service>
-    <service id=".service_locator.vEftP4J" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.skT1rVi" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="content" type="service" id="Bolt\Repository\ContentRepository"/>
+        <argument key="query" type="service" id="Bolt\Storage\Query"/>
       </argument>
     </service>
     <service id=".service_locator.vbm5i4i" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -9167,12 +9229,6 @@
       <argument type="collection">
         <argument key="config" type="service" id="Bolt\Configuration\Config"/>
         <argument key="content" type="service" id="Bolt\Repository\ContentRepository"/>
-      </argument>
-    </service>
-    <service id=".service_locator.skT1rVi" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="query" type="service" id="Bolt\Storage\Query"/>
       </argument>
     </service>
     <service id=".service_locator.Wqb3lwI" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
@@ -9201,6 +9257,19 @@
         <argument key="validator" type="service" id="debug.validator"/>
       </argument>
     </service>
+    <service id=".service_locator.Ceyeo9Y" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="exception" type="service" id=".errored..service_locator.Ceyeo9Y.Throwable"/>
+        <argument key="twig" type="service" id="twig"/>
+      </argument>
+    </service>
+    <service id=".service_locator.9.DS00F" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="exception" type="service" id=".errored..service_locator.9.DS00F.Throwable"/>
+      </argument>
+    </service>
     <service id=".service_locator.Hm4O72P" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection"/>
@@ -9211,7 +9280,7 @@
         <argument key="contentRepository" type="service" id="Bolt\Repository\ContentRepository"/>
       </argument>
     </service>
-    <service id=".service_locator.2bVLNBT" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.R96M75I" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="Bolt\Controller\Backend\AuthenticationController::login" type="service" id=".service_locator.g.xob4v"/>
@@ -9221,13 +9290,15 @@
         <argument key="Bolt\Controller\Backend\ContentEditController::edit" type="service" id=".service_locator.YuA9Nm."/>
         <argument key="Bolt\Controller\Backend\ContentEditController::status" type="service" id=".service_locator.YuA9Nm."/>
         <argument key="Bolt\Controller\Backend\ContentLocalizationController::locales" type="service" id=".service_locator.YuA9Nm."/>
-        <argument key="Bolt\Controller\Backend\DashboardController::index" type="service" id=".service_locator.vEftP4J"/>
+        <argument key="Bolt\Controller\Backend\DashboardController::index" type="service" id=".service_locator.skT1rVi"/>
         <argument key="Bolt\Controller\Backend\FileEditController::save" type="service" id=".service_locator.vbm5i4i"/>
         <argument key="Bolt\Controller\Backend\GeneralController::kitchensink" type="service" id=".service_locator.X8jzeZt"/>
         <argument key="Bolt\Controller\Backend\ListingController::overview" type="service" id=".service_locator.skT1rVi"/>
         <argument key="Bolt\Controller\Backend\LogViewerController::index" type="service" id=".service_locator.Wqb3lwI"/>
         <argument key="Bolt\Controller\Backend\ProfileController::save" type="service" id=".service_locator.U_5YyZ3"/>
         <argument key="Bolt\Controller\Backend\UserEditController::save" type="service" id=".service_locator.ofu.DSK"/>
+        <argument key="Bolt\Controller\ErrorController::__invoke" type="service" id=".service_locator.9.DS00F"/>
+        <argument key="Bolt\Controller\ErrorController::showAction" type="service" id=".service_locator.Ceyeo9Y"/>
         <argument key="Bolt\Controller\Frontend\HomepageController::homepage" type="service" id=".service_locator.VIUKRDp"/>
         <argument key="Bolt\Controller\Frontend\ListingController::listing" type="service" id=".service_locator.VIUKRDp"/>
         <argument key="Bolt\Controller\Frontend\SearchController::search" type="service" id=".service_locator.VIUKRDp"/>
@@ -9239,13 +9310,16 @@
         <argument key="Bolt\Controller\Backend\ContentEditController:edit" type="service" id=".service_locator.YuA9Nm."/>
         <argument key="Bolt\Controller\Backend\ContentEditController:status" type="service" id=".service_locator.YuA9Nm."/>
         <argument key="Bolt\Controller\Backend\ContentLocalizationController:locales" type="service" id=".service_locator.YuA9Nm."/>
-        <argument key="Bolt\Controller\Backend\DashboardController:index" type="service" id=".service_locator.vEftP4J"/>
+        <argument key="Bolt\Controller\Backend\DashboardController:index" type="service" id=".service_locator.skT1rVi"/>
         <argument key="Bolt\Controller\Backend\FileEditController:save" type="service" id=".service_locator.vbm5i4i"/>
         <argument key="Bolt\Controller\Backend\GeneralController:kitchensink" type="service" id=".service_locator.X8jzeZt"/>
         <argument key="Bolt\Controller\Backend\ListingController:overview" type="service" id=".service_locator.skT1rVi"/>
         <argument key="Bolt\Controller\Backend\LogViewerController:index" type="service" id=".service_locator.Wqb3lwI"/>
         <argument key="Bolt\Controller\Backend\ProfileController:save" type="service" id=".service_locator.U_5YyZ3"/>
         <argument key="Bolt\Controller\Backend\UserEditController:save" type="service" id=".service_locator.ofu.DSK"/>
+        <argument key="Bolt\Controller\ErrorController:__invoke" type="service" id=".service_locator.9.DS00F"/>
+        <argument key="Bolt\Controller\ErrorController" type="service" id=".service_locator.9.DS00F"/>
+        <argument key="Bolt\Controller\ErrorController:showAction" type="service" id=".service_locator.Ceyeo9Y"/>
         <argument key="Bolt\Controller\Frontend\HomepageController:homepage" type="service" id=".service_locator.VIUKRDp"/>
         <argument key="Bolt\Controller\Frontend\ListingController:listing" type="service" id=".service_locator.VIUKRDp"/>
         <argument key="Bolt\Controller\Frontend\SearchController:search" type="service" id=".service_locator.VIUKRDp"/>
@@ -9714,6 +9788,29 @@
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.bgaRbUU" method="withContext"/>
     </service>
+    <service id=".service_locator.vdmMuyE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator"/>
+      <argument type="collection">
+        <argument key="doctrine" type="service" id="doctrine" on-invalid="ignore"/>
+        <argument key="form.factory" type="service" id="form.factory" on-invalid="ignore"/>
+        <argument key="http_kernel" type="service" id="http_kernel" on-invalid="ignore"/>
+        <argument key="parameter_bag" type="service" id="parameter_bag" on-invalid="ignore"/>
+        <argument key="request_stack" type="service" id="request_stack" on-invalid="ignore"/>
+        <argument key="router" type="service" id="router.default" on-invalid="ignore"/>
+        <argument key="security.authorization_checker" type="service" id="security.authorization_checker" on-invalid="ignore"/>
+        <argument key="security.csrf.token_manager" type="service" id="security.csrf.token_manager" on-invalid="ignore"/>
+        <argument key="security.token_storage" type="service" id="security.token_storage" on-invalid="ignore"/>
+        <argument key="serializer" type="service" id="serializer" on-invalid="ignore"/>
+        <argument key="session" type="service" id="session" on-invalid="ignore"/>
+        <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
+      </argument>
+    </service>
+    <service id=".service_locator.vdmMuyE.Bobdenotter\RssExtension\Controller" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+      <tag name="container.service_locator_context" id="Bobdenotter\RssExtension\Controller"/>
+      <argument>Bobdenotter\RssExtension\Controller</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.vdmMuyE" method="withContext"/>
+    </service>
     <service id=".service_locator.C2Thyvr" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
@@ -9773,23 +9870,6 @@
       <argument>twig.template_cache_warmer</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.o9nGMXB" method="withContext"/>
-    </service>
-    <service id=".service_locator.vdmMuyE" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
-      <tag name="container.service_locator"/>
-      <argument type="collection">
-        <argument key="doctrine" type="service" id="doctrine" on-invalid="ignore"/>
-        <argument key="form.factory" type="service" id="form.factory" on-invalid="ignore"/>
-        <argument key="http_kernel" type="service" id="http_kernel" on-invalid="ignore"/>
-        <argument key="parameter_bag" type="service" id="parameter_bag" on-invalid="ignore"/>
-        <argument key="request_stack" type="service" id="request_stack" on-invalid="ignore"/>
-        <argument key="router" type="service" id="router.default" on-invalid="ignore"/>
-        <argument key="security.authorization_checker" type="service" id="security.authorization_checker" on-invalid="ignore"/>
-        <argument key="security.csrf.token_manager" type="service" id="security.csrf.token_manager" on-invalid="ignore"/>
-        <argument key="security.token_storage" type="service" id="security.token_storage" on-invalid="ignore"/>
-        <argument key="serializer" type="service" id="serializer" on-invalid="ignore"/>
-        <argument key="session" type="service" id="session" on-invalid="ignore"/>
-        <argument key="twig" type="service" id="twig" on-invalid="ignore"/>
-      </argument>
     </service>
     <service id=".service_locator.vdmMuyE.Translation\Bundle\Controller\SymfonyProfilerController" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator_context" id="Translation\Bundle\Controller\SymfonyProfilerController"/>
@@ -9926,12 +10006,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver" public="false">
-      <argument type="service" id=".service_locator.2bVLNBT"/>
+      <argument type="service" id=".service_locator.R96M75I"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver" public="false"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver" public="false"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver" public="false">
-      <argument type="service" id=".service_locator.2bVLNBT"/>
+      <argument type="service" id=".service_locator.R96M75I"/>
     </service>
     <service id=".debug.http_client.inner" class="Symfony\Contracts\HttpClient\HttpClientInterface" public="false">
       <argument type="collection"/>
@@ -9979,6 +10059,8 @@
       <argument type="service" id="api_platform.path_segment_name_generator.underscore"/>
     </service>
     <service id=".errored..service_locator.YuA9Nm..Bolt\Entity\Content" class="Bolt\Entity\Content"/>
+    <service id=".errored..service_locator.Ceyeo9Y.Throwable" class="Throwable"/>
+    <service id=".errored..service_locator.9.DS00F.Throwable" class="Throwable"/>
     <service id="console.command_loader" class="Symfony\Component\Console\CommandLoader\ContainerCommandLoader" public="true">
       <argument type="service" id=".service_locator.GJtTcvF"/>
       <argument type="collection">
@@ -10291,10 +10373,11 @@
       <argument type="service" id="monolog.logger.cache" on-invalid="ignore"/>
       <factory class="Symfony\Component\Cache\Adapter\AbstractAdapter" method="createSystemCache"/>
     </service>
-    <service id=".service_locator.glhu4sL" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
+    <service id=".service_locator.DJ2HLGf" class="Symfony\Component\DependencyInjection\ServiceLocator" public="false">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="BabDev\PagerfantaBundle\Twig\PagerfantaRuntime" type="service" id="pagerfanta.twig_runtime"/>
+        <argument key="Bolt\BoltForms\FormRuntime" type="service" id="Bolt\BoltForms\FormRuntime"/>
         <argument key="Symfony\Bridge\Twig\Extension\CsrfRuntime" type="service" id="twig.runtime.security_csrf"/>
         <argument key="Symfony\Bridge\Twig\Extension\HttpKernelRuntime" type="service" id="twig.runtime.httpkernel"/>
         <argument key="Symfony\Component\Form\FormRenderer" type="service" id="twig.form.renderer"/>
@@ -10302,6 +10385,7 @@
     </service>
     <service id="Psr\Container\ContainerInterface" alias="service_container" public="false"/>
     <service id="Symfony\Component\DependencyInjection\ContainerInterface" alias="service_container" public="false"/>
+    <service id="Symfony\Component\ErrorHandler\ErrorRenderer\ErrorRendererInterface" alias="error_handler.error_renderer.html" public="false"/>
     <service id="Bolt\Menu\BackendMenuBuilderInterface" alias="Bolt\Menu\StopwatchBackendMenuBuilder"/>
     <service id="Bolt\Menu\FrontendMenuBuilderInterface" alias="Bolt\Menu\StopwatchFrontendMenuBuilder"/>
     <service id="Bolt\Storage\QueryInterface" alias="Bolt\Storage\SelectQuery" public="false"/>
@@ -10402,6 +10486,7 @@
     <service id="Symfony\Component\DependencyInjection\ReverseContainer" alias="reverse_container" public="false"/>
     <service id="error_renderer.html" alias="twig.error_renderer.html"/>
     <service id="error_renderer" alias="error_handler.error_renderer.serializer" public="false"/>
+    <service id="Psr\EventDispatcher\EventDispatcherInterface" alias="debug.event_dispatcher"/>
     <service id="Psr\Container\ContainerInterface $parameterBag" alias="parameter_bag"/>
     <service id="cache.app_clearer" alias="cache.default_clearer" public="true"/>
     <service id="Psr\Cache\CacheItemPoolInterface" alias="cache.app" public="false"/>
@@ -10548,7 +10633,7 @@
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem" public="false"/>
     <service id="api_platform.name_converter" alias="serializer.name_converter.metadata_aware"/>
     <service id="knp_menu.menu_provider" alias="knp_menu.menu_provider.chain"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.2bVLNBT"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.R96M75I"/>
     <service id="Psr\Log\LoggerInterface $requestLogger" alias="monolog.logger.request"/>
     <service id="Psr\Log\LoggerInterface $doctrineLogger" alias="monolog.logger.doctrine"/>
     <service id="Psr\Log\LoggerInterface $debugLogger" alias="monolog.logger.debug"/>
@@ -10629,9 +10714,5 @@
     <service id="api_platform.metadata.property.metadata_factory.cached.inner" alias="api_platform.metadata.property.metadata_factory.validator" public="false"/>
     <service id="console.command.public_alias.api_platform.json_schema.json_schema_generate_command" alias="api_platform.json_schema.json_schema_generate_command" public="true"/>
     <service id="console.command.public_alias.api_platform.swagger.command.swagger_command" alias="api_platform.swagger.command.swagger_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_cache.contains_command" alias="doctrine_cache.contains_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_cache.delete_command" alias="doctrine_cache.delete_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_cache.flush_command" alias="doctrine_cache.flush_command" public="true"/>
-    <service id="console.command.public_alias.doctrine_cache.stats_command" alias="doctrine_cache.stats_command" public="true"/>
   </services>
 </container>

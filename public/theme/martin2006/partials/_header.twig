@@ -1,15 +1,19 @@
 <!-- Header bar -->
 <header>
-    <nav class="mb-8 p-4 md:flex justify-between items-center bg-gray-200">
-    <p class="text-xl text-indigo-800 font-semibold tracking-widest"><a href="{{ path('homepage') }}"  class="no-underline">Martin Betz</a></p>
-    
-    <ul class="md:space-x-4 text-gray-800">
-        <li class="md:inline">Articles</li>
-        <li class="md:inline">Products</li>
-        <li class="md:inline">Services</li>
-        <li class="md:inline">Contact</li>
-    </ul>
-    
-  </nav>
+  <nav class="mb-8 px-12 pt-6 md:flex justify-between items-center">
+    {% setcontent block = 'blocks/profile' %}
+    <div class="flex items-center space-x-3">
+      <img src="{{ block.image }}" class="w-16 h-auto rounded-full" />
+      <p class="text-xl font-semibold tracking-wider">
+        <a href="{{ path('homepage') }}" class="no-underline text-primary-900">Martin Betz</a>
+      </p>
+      <a href="https://twitter.com/Martin_Betz" target="blank" class=""><img src="/files/twitter.svg" class="fill-current text-green-400 w-4 h-auto"></a>
+    </div>
 
+    <ul class="md:space-x-4 text-gray-800">
+      <li class="md:inline"><a href="/articles" class="">Articles</a></li>
+      <li class="md:inline"><a href="/page/services">Services</a></li>
+      <li class="md:inline"><a href="/page/contact">Contact</a></li>
+    </ul>
+  </nav>
 </header>

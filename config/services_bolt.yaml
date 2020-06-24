@@ -13,3 +13,9 @@ services:
     BobdenOtter\ConfigurationNotices\:
         resource: '../vendor/bobdenotter/configuration-notices/src/*'
         exclude: '../vendor/bobdenotter/configuration-notices/src/{Entity,Exception}'
+    Bolt\BoltForms\:
+        resource: '../vendor/bolt/forms/src/*'
+        exclude: '../vendor/bolt/forms/src/{Entity,Exception}'
+    Bobdenotter\RssExtension\:
+        resource: '../vendor/bobdenotter/rss-extension/src/*'
+        exclude: '../vendor/bobdenotter/rss-extension/src/{Entity,Exception}'

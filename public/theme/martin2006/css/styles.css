@@ -1,0 +1,143 @@
+@tailwind base;
+
+html {
+    font-size: 17px;
+}
+
+svg {
+    width: 1em;
+    height: 1em;
+    color: currentColor;
+}
+
+.prose ul {
+    @apply list-disc;
+    @apply pl-5;
+}
+
+.prose * + ul {
+    @apply mt-4;
+}
+
+.prose ul + * {
+    @apply mt-4;
+    @apply mb-2;
+}
+
+.prose li ul {
+    @apply mt-2;
+}
+
+.prose li {
+    @apply text-base;
+    @apply font-normal;
+    @apply text-gray-800;
+    @apply leading-relaxed;
+}
+
+.prose li + li {
+    @apply mt-2;
+}
+
+.prose li p {
+    @apply mt-4;
+}
+
+.prose li p + p {
+    @apply mt-2;
+}
+
+.prose li:first-child p:first-child {
+    @apply mt-2;
+}
+
+.no-prose li:first-child p:first-child {
+    @apply mt-2;
+}
+
+h1 {
+    @apply text-4xl;
+    @apply font-bold;
+    @apply text-gray-900;
+}
+
+h1 + * {
+    @apply mt-6;
+}
+
+h2 {
+    @apply text-2xl;
+    @apply font-bold;
+    @apply text-gray-900;
+    @apply leading-tight;
+}
+
+* + h2 {
+    @apply mt-10;
+}
+
+h2 + * {
+    @apply mt-4;
+}
+
+p {
+    @apply text-base;
+    @apply font-normal;
+    @apply text-gray-800;
+    @apply leading-loose;
+}
+
+p + p {
+    @apply mt-4;
+}
+
+code {
+    @apply bg-gray-200; 
+    font-size: '.875em';
+    @apply pl-1;
+    @apply pr-1;
+}
+
+pre {
+    @apply bg-gray-200;
+    @apply pt-3;
+    @apply pr-4;
+    @apply pb-3;
+    @apply pl-4;
+}
+
+* + pre {
+    @apply mt-4;
+}
+
+pre + * {
+    @apply mt-4;
+}
+
+pre code {
+    @apply text-sm;
+    @apply p-0;
+}
+
+
+
+blockquote {
+    @apply italic;
+    @apply border-l-4;
+    @apply border-solid;
+    @apply border-gray-300;
+    @apply pl-4;
+}
+
+* + blockquote {
+   @apply mt-4;
+}
+
+blockquote + * {
+  @apply mt-4;
+}
+
+
+@tailwind components;
+
+@tailwind utilities;

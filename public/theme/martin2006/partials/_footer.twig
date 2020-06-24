@@ -1,4 +1,18 @@
 <!-- Footer -->
-<footer class="mt-8 px-4">
-    <p>Martin Betz › 2020</p>
+<footer class="flex justify-between mt-8 px-12 text-sm">
+  <p>
+    Martin Betz, 2020 • <a href="/pages/privacy">Privacy/GDPR</a> • <a href="/pages/imprint">Imprint</a>
+  </p>
+  <div class="flex space-x-4 text-xs">
+    <p class="text-semi">
+      Topics
+    </p>
+    <div class="flex space-x-2 list-none items-center">
+      {% for category in config.get('taxonomies/categories/options') %}
+        <div class="p-0">
+          <a href="/categories/{{ category|slug }}">{{ category }}</a>
+        </div>
+      {% endfor %}
+    </ol>
+  </div>
 </footer>

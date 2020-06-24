@@ -6,14 +6,12 @@
 
         {{ record.content }}
 
-        {{ include('partials/_recordfooter.twig', { 'record': record }) }}
-
     {% endif %}
 
-        <h2 class="mt-8 font-xl">Latest articles</h2>
-        {% setcontent articles = 'articles/latest/3' %}
+        <h2 class="mt-8 text-xl text-semi">Latest articles</h2>
+        {% setcontent articles = "article" limit 6 order "-publishedAt" %}
         {% for article in articles %}
-                <a href="{{ article|link }}" class="underline">{{ article|title }}</a>
+                <span class="text-xs text-gray-600">{{article.publishedAt|localedatetime("%y-%m-%d")}}</span> <a href="{{ article|link }}" class=underline">{{ article|title }}</a>
                 <p>{{ article.teaser }}</p>
         {% endfor %}
 

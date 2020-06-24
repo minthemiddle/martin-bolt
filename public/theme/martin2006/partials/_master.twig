@@ -13,15 +13,28 @@
                 {{- ' | ' ~ config.get('general/payoff') -}}
             {%- endif -%}
         </title>
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
-        <link href="https://pensive-agnesi-f6bc76.netlify.app/_next/static/css/styles.60ef2fea.chunk.css" rel="stylesheet">
+        <script async defer data-domain="martinbetz.eu" src="https://stats.martinbetz.eu/js/plausible.js"></script>
+        <script>window.plausible = window.plausible || function() { (window.plausible.q = window.plausible.q || []).push(arguments) }</script>
+        <link href="{{ asset('css/out.css', 'theme') }}" rel="stylesheet">
+        {# <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> #}
+        {# <link href="https://pensive-agnesi-f6bc76.netlify.app/_next/static/css/styles.60ef2fea.chunk.css" rel="stylesheet"> #}
+        <style>
+        pre {
+            overflow-x: auto;
+        }
+
+        a {
+            color: hsl(58, 19%, 35%);
+        }
+        </style>
     </head>
-    <body class="mx-auto max-w-4xl mb-8 px-16 py-4 bg-gray-100">
+    <body class="mx-auto max-w-4xl mb-8 px-8 md:px-16 py-4 bg-primary-100">
+    <script>0</script>
         {% block body %}
 
             {{ include('partials/_header.twig') }}
 
-            <main class="px-4 bg-white">
+            <main class="prose px-12 pt-12 pb-16 bg-white leading-loose">
             {% block main %}
             {% endblock main %}
             </main>

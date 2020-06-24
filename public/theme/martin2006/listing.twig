@@ -16,24 +16,18 @@
     {% endif %}
 
     {% for record in records %}
-        <article>
+        <article class="mt-8 mb-2">
 
-            <h2><a href="{{ record|link }}">{{ record|title }}</a></h2>
+        <p>{{ record.publishedAt|localedatetime("%B %e, %Y") }}</p>
+        
+        <h2 class="mt-2 text-xl"><a href="{{ record|link }}">{{ record|title }}</a></h2>
 
-                {% if record|image %}
-                    <a href="{{ record|image }}">
-                        <img src="{{ record|thumbnail(480, 320) }}" alt="{{ record|image.alt|default() }}" />
-                    </a>
-            {% endif %}
-
-            <p>{{ record|excerpt(300, false, search|default('')) }}</p>
-
-            {% include 'partials/_recordfooter.twig' with { 'record': record } %}
+        <p>{{ record|excerpt(300, false, search|default('')) }}</p>
 
         </article>
 
         {% if not loop.last %}
-            <hr>
+            <hr class="mt-4 mb-8">
         {% endif %}
 
     {% else %}
@@ -49,6 +43,6 @@
     {% endfor %}
 
     {# If there are more records than will fit on one page, the pager is shown. #}
-        {{ pager(records, template = 'helpers/_pager_basic.html.twig') }}
+        {{ pager(records, template = 'partials/_pager.html.twig') }}
 
 {% endblock main %}
